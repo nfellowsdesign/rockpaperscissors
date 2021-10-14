@@ -1,21 +1,41 @@
 
 //username input
 
-let username = prompt("Enter your Name")
+//let username = prompt("Enter your Name")
 
 //game aspects
-function gameRound(playerSelection,computerSelection) {
-    function computerPlay(){
-       let computerSelection = "rock"
-
+function computerPlay(){
+    let roll = (Math.floor(Math.random()*3)+1)
+    console.log(roll)
+    switch (roll) {
+        case 1: {
+            let computerSelection = "rock";
+            console.log(computerSelection);
+        break;
+        }
+        case 2: {
+           let computerSelection = "paper";
+           console.log(computerSelection);
+        break;
+        }
+        case 3: {
+           let computerSelection = "scissors";
+           console.log(computerSelection);
+        break;
+        }
     }
-    function userPlay(){
-        let userSelection = prompt("Enter your Move");
-    }
-    computerPlay();
-    userPlay();
+}
+computerPlay();
+function userPlay(){
+    let userSelection = prompt("Enter your Move");
 }
 
-gameRound()
+userPlay();
+
+function playRound(playerSelection,computerSelection) { 
+
+}
+
+playRound()
 
 //scorekeeping
