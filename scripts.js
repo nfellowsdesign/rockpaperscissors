@@ -6,28 +6,29 @@
 //game aspects
 function computerPlay(){
     let roll = (Math.floor(Math.random()*3)+1)
-    console.log(roll)
     switch (roll) {
         case 1: {
             let computerSelection = "rock";
-            console.log(computerSelection);
+            console.log("Computer Move:"+computerSelection);
         break;
         }
         case 2: {
            let computerSelection = "paper";
-           console.log(computerSelection);
+           console.log("Computer Move:"+computerSelection);
         break;
         }
         case 3: {
            let computerSelection = "scissors";
-           console.log(computerSelection);
+           console.log("Computer Move:"+computerSelection);
         break;
         }
     }
 }
 computerPlay();
+
 function userPlay(){
-    let userSelection = prompt("Enter your Move");
+    let userSelection = prompt("Enter your Move").toLowerCase();
+    console.log("User Move:"+userSelection)
 }
 
 userPlay();
