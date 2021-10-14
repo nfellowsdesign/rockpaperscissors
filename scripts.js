@@ -1,8 +1,7 @@
-
 //user name input
 let username = prompt("Enter your Name")
 
-//computer move
+//computer move function
 function computerPlay(){
     let roll = (Math.floor(Math.random()*3)+1)
     switch (roll) {
@@ -24,7 +23,7 @@ function computerPlay(){
     }
 }
 
-//user move
+//user move function
 function userPlay(){
     let userEntry = prompt("Enter your Move").toLowerCase();
     if (userEntry === "rock"){
@@ -38,7 +37,7 @@ function userPlay(){
     }
 }
 
-//game round
+//game round function
 function playRound(userSelection, computerSelection) {
     //Results if user picks rock
     if (userSelection == "rock"){
@@ -74,25 +73,27 @@ function playRound(userSelection, computerSelection) {
 
 //full game function
 function game(){
-
-    let playerScore = 0;
+    //initial states
+    let userScore = 0;
     let computerScore = 0;
     let end = 0;
     let roundTracker = 1;
     console.log("Round:"+roundTracker);
-    //5 round loop
+
+    //round loop
     do{
+        //user/computer moves
         let computerSelection = computerPlay();
         let userSelection = userPlay();
-        
+        //log moves
         console.log("User Move:"+userSelection);
         console.log("Computer Move:"+computerSelection);
-        
+        //log result of round
         let roundResult = playRound(userSelection,computerSelection);
-    
+        //add round result to game tracking
         switch(roundResult) {
             case "win":{
-                playerScore++;
+                userScore++;
                 console.log("Round was won");
                 break;
             }
@@ -105,21 +106,22 @@ function game(){
                 console.log("Round was tied");
             }
         }
-            console.log(playerScore);
+        //log game tracking
+            console.log(userScore);
             console.log(computerScore);
-
-            if (playerScore == 5){
+        //endstate
+            if (userScore == 5){
                 end = 1;
-                console.log("Game over: You Win");
+                console.log("Game over: "+username+" Wins");
                 } 
             if (computerScore == 5){
                 end = 1;
-                console.log("Game over: You Lose");
+                console.log("Game over: "+username+" Loses");
                 } 
+        //Round Tracker
             roundTracker++;
             console.log("Round:"+roundTracker);
-        } while (end != 1)
-    }  
+    } while (end != 1);
+}  
 
 game();
-//scorekeeping
