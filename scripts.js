@@ -74,8 +74,14 @@ function playRound(userSelection, computerSelection) {
 
 //full game function
 function game(){
+
+    let playerScore = 0;
+    let computerScore = 0;
+    let end = 0;
+    let roundTracker = 1;
+    console.log("Round:"+roundTracker);
     //5 round loop
-    for (let i = 0; i < 5; i++){
+    do{
         let computerSelection = computerPlay();
         let userSelection = userPlay();
         
@@ -83,10 +89,37 @@ function game(){
         console.log("Computer Move:"+computerSelection);
         
         let roundResult = playRound(userSelection,computerSelection);
-        
-        console.log(roundResult);
-    }
-}  
+    
+        switch(roundResult) {
+            case "win":{
+                playerScore++;
+                console.log("Round was won");
+                break;
+            }
+            case "lose":{
+                computerScore++;
+                console.log("Round was lost");
+                break;
+            }
+            default:{
+                console.log("Round was tied");
+            }
+        }
+            console.log(playerScore);
+            console.log(computerScore);
+
+            if (playerScore == 5){
+                end = 1;
+                console.log("Game over: You Win");
+                } 
+            if (computerScore == 5){
+                end = 1;
+                console.log("Game over: You Lose");
+                } 
+            roundTracker++;
+            console.log("Round:"+roundTracker);
+        } while (end != 1)
+    }  
 
 game();
 //scorekeeping
