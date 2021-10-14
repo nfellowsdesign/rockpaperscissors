@@ -36,7 +36,8 @@ function userPlay(){
         return "Not a valid move";
     }
 }
-function playRound(playerSelection,computerSelection) {
+function playRound(userSelection, computerSelection) {
+
 
 }
 
@@ -46,12 +47,15 @@ function game(){
         playRound()
     }
 
+    
+
 
 }  
 
 
 let computerSelection = computerPlay();
 let userSelection = userPlay();
+
 console.log("User Move:"+userSelection)
 console.log("Computer Move:"+computerSelection)
 
