@@ -24,7 +24,6 @@ function computerPlay(){
         }
     }
 }
-
 function userPlay(){
     let userEntry = prompt("Enter your Move").toLowerCase();
     if (userEntry === "rock"){
@@ -35,19 +34,25 @@ function userPlay(){
         return userEntry;
     }else{
         return "Not a valid move";
-        userPlay();
     }
 }
-    
-let computerSelection = computerPlay();
-let userSelection = userPlay();
-console.log("User Move:"+userSelection)
-console.log("Computer Move:"+computerSelection)
-
 function playRound(playerSelection,computerSelection) {
 
 }
 
-playRound()
+
+function game(){
+    for (let i = 0; i < 5; i++){
+        playRound()
+    }
+
+
+}  
+
+
+let computerSelection = computerPlay();
+let userSelection = userPlay();
+console.log("User Move:"+userSelection)
+console.log("Computer Move:"+computerSelection)
 
 //scorekeeping
