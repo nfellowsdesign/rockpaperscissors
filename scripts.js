@@ -8,32 +8,43 @@ function computerPlay(){
     let roll = (Math.floor(Math.random()*3)+1)
     switch (roll) {
         case 1: {
-            let computerSelection = "rock";
-            console.log("Computer Move:"+computerSelection);
+            return "rock";
+           // console.log("Computer Move:"+computerSelection);
         break;
         }
         case 2: {
-           let computerSelection = "paper";
-           console.log("Computer Move:"+computerSelection);
+           return "paper";
+           //console.log("Computer Move:"+computerSelection);
         break;
         }
         case 3: {
-           let computerSelection = "scissors";
-           console.log("Computer Move:"+computerSelection);
+            return "scissors";
+           //console.log("Computer Move:"+computerSelection);
         break;
         }
     }
 }
-computerPlay();
 
 function userPlay(){
-    let userSelection = prompt("Enter your Move").toLowerCase();
-    console.log("User Move:"+userSelection)
+    let userEntry = prompt("Enter your Move").toLowerCase();
+    if (userEntry === "rock"){
+        return userEntry;
+    }else if (userEntry === "paper"){
+        return userEntry;
+    }else if (userEntry === "scissors"){
+        return userEntry;
+    }else{
+        return "Not a valid move";
+        userPlay();
+    }
 }
+    
+let computerSelection = computerPlay();
+let userSelection = userPlay();
+console.log("User Move:"+userSelection)
+console.log("Computer Move:"+computerSelection)
 
-userPlay();
-
-function playRound(playerSelection,computerSelection) { 
+function playRound(playerSelection,computerSelection) {
 
 }
 
