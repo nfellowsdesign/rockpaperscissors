@@ -1,0 +1,14 @@
+
+:root {
+    --background-color:#131417;
+    --main-color:#1d1f22;
+    --accent-color:#d6cfcf;
+    --green-color:#49e361;
+    --red-color:#e53f3f;
+}
+
+
+
+body{
+    background-color: var(--background-color);
+}

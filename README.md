@@ -1,9 +1,9 @@
-This is a tic-tac-toe game made with HTML, CSS, and JS.
+This is a Rock Paper Scissors game made with HTML, CSS, and JS.
 
 PLAN:
 
 UNDERSTANDING THE GOAL:
-Create a tic-tac-toe game where the user plays against the computer, displays the results of the game, and keeps track of either the previous rounds or the total score.
+Create a Rock Paper Scissors game where the user plays against the computer, displays the results of the game, and keeps track of either the previous rounds and the total score.
 
 
 ASPECTS OF THE PROGRAM:
