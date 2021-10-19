@@ -11,3 +11,16 @@ body{
     color: var(--accent-color);
     background-color: var(--background-color);
 }
+
+.logo{
+    color: var(--accent-color);
+    height: 150px;
+    width: 150px;
+}
+
+button {
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    border-style: none;
+    border-radius: 8px;
+}
