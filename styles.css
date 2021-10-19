@@ -11,16 +11,17 @@
 body{
     color: var(--accent-color);
     background-color: var(--background-color);
+    font-family: Helvetica, sans-serif;
 }
 
 .logo{
     color: var(--accent-color);
     max-width: 150px;
-
 }
 
 .logo-container {
     flex:2;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -33,6 +34,7 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+
 button {
     background-color: var(--main-color);
     color: var(--accent-color);
@@ -59,20 +61,58 @@ button.play-button{
     border-radius: 8px;
     display: flex;
     flex: 1;
+    height: 264px;
 }
 
 .player-score-box, .computer-score-box{
-
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    padding-top: 32px;
+    align-items: center;
+    justify-content: center;
 }
 .player-score, .computer-score, .computer-title, .player-title{
     flex: 1;
+}
+
+.score-divider{
+    padding-top: 32px;
+    padding-bottom: 32px;
+    justify-content: center;
+    align-content: center;
+    display: flex;
     flex-direction: column;
+}
+
+.round-marker{
+    background-color: var(--main-color);
+    border-style: solid;
+    border-color: var(--accent-color);
+    border-width: 1px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100vw;
     align-items: center;
     justify-content: center;
 }
 
-.score-divider{
+.current-round{
+    margin-top: 12px;
+    text-align: center;
+    justify-content: center;
+}
 
+.divider-line{
+    background-color: var(--accent-color);
+    width: 1px;
+    height: 144px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+}
+
+.container.section2 {
+    /* gap: 16px;*/
 }
 
