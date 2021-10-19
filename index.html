@@ -8,28 +8,39 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div class="Header"></div>
-        <img alt="rockpaperscissorslogo" class="logo" src="./img/RPSLogo.svg">
-        <button>New Game</button>
-    <div class="Container Section1">
-        <h1 class="SectionHeader">Scoreboard</h1>
-        <div class="Scoreboard">
-            <div class="PlayerScoreHalf">
-                <p class="PlayerTitle">Player</p>
+    <div class="container header">
+        <div class="logo-container">
+            <img alt="rockpaperscissorslogo" class="logo" src="./img/RPSLogo.svg">
+        </div>
+        <button class="new-game">New Game</button>
+    </div>
+
+    <div class="container section1">
+        <h1 class="section-header">SCOREBOARD</h1>
+        <div class="scoreboard">
+            <div class="player-score-box">
+                <p class="player-title">Player</p>
+                <p class="player-score">0</p>
             </div>
-            <div class="Seperator"></div>
-            <div class="ComputerScoreHalf"></div>
-                <p class="ComputerTitle">Computer</p>
+            <div class="score-divider">
+                <p class="current-round">00</p>
+
+            </div>
+            <div class="computer-score-box"></div>
+                <p class="computer-title">Computer</p>
+                <p class="computer-score">0</p>
         </div>
     </div>
-    <div class="Container Section2">
-        <h1 class="SectionHeader">Moves</h1>
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
+
+    <div class="container section2">
+        <h1 class="section-header">MOVES</h1>
+        <button class="play-button rock">Rock</button>
+        <button class="play-button paper">Paper</button>
+        <button class="play-button scissors">Scissors</button>
     </div>
-    <div class="Container Section3">
-        <h1 class="SectionHeader">Round History</h1>
+
+    <div class="container section3">
+        <h1 class="section-header">ROUND HISTORY</h1>
 
     </div>
 
