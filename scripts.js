@@ -63,71 +63,65 @@ rockBtn.addEventListener('click', function(e){
     let userSelection = 'rock';
     let computerSelection = computerPlay();
     let roundResult = playRound(userSelection,computerSelection);
-    console.log(roundResult)
+    console.log(roundResult);
+    game(roundResult);
 });
    
 paperBtn.addEventListener('click', function(e){
     let userSelection = 'paper';
     let computerSelection = computerPlay();
     let roundResult = playRound(userSelection,computerSelection);
-    console.log(roundResult)
+    console.log(roundResult);
+    game(roundResult);
 });
 
 scissorsBtn.addEventListener('click', function(e){
     let userSelection = 'scissors';
     let computerSelection = computerPlay();
     let roundResult = playRound(userSelection,computerSelection);
-    console.log(roundResult)
+    console.log(roundResult);
+    game(roundResult);
 });
 
 
+//initial states
+let userScore = 0;
+let computerScore = 0;
+let roundTracker = 1;
+console.log("Round:"+roundTracker);
 
-/*
-//full game function
-function game(){
-    //initial states
-    let userScore = 0;
-    let computerScore = 0;
-    let end = 0;
-    let roundTracker = 1;
-    console.log("Round:"+roundTracker);
-
-    //round loop
-    do{
-        
-
+function game(roundResult){
         switch(roundResult) {
             case "win":{
+                roundTracker++;
+                console.log("Round:"+roundTracker);
                 userScore++;
+                console.log(userScore);
+                console.log(computerScore);
                 console.log("Round was won");
                 break;
             }
             case "lose":{
+                roundTracker++;
+                console.log("Round:"+roundTracker);
                 computerScore++;
+                console.log(userScore);
+                console.log(computerScore);
                 console.log("Round was lost");
                 break;
             }
             default:{
+                roundTracker++;
+                console.log("Round:"+roundTracker);
+                console.log(userScore);
+                console.log(computerScore);
                 console.log("Round was tied");
             }
         }
-        //log game tracking
-            console.log(userScore);
-            console.log(computerScore);
-        //endstate
-            if (userScore == 5){
-                end = 1;
-                console.log("Game over: "+username+" Wins");
-                } 
-            if (computerScore == 5){
-                end = 1;
-                console.log("Game over: "+username+" Loses");
-                } 
-        //Round Tracker
-            roundTracker++;
-            console.log("Round:"+roundTracker);
-    } while (end != 1);
-}  
-
-game();
-*/
+        if (userScore == 5){
+            console.log("Game over: Player Wins");
+        } 
+        if (computerScore == 5){
+            console.log("Game over: Player Loses");
+        }
+    }
