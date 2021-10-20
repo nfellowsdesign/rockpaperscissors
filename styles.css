@@ -158,3 +158,26 @@ button:hover{
     gap: 16px;
 }
 
+.round-history{
+    /*background-color: var(--test-color);*/
+    flex:2;
+    margin-left: 16px;
+}
+.spacer{
+    flex:1;
+}
+
+.round-list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.round{
+    font-size: 16px;
+    background-color: var(--main-color);
+    padding: 32px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    text-align: center;
+}

@@ -1,16 +1,41 @@
 //calling button elements
-const rockBtn = document.querySelector("#rock")
-const paperBtn = document.querySelector("#paper")
-const scissorsBtn = document.querySelector("#scissors")
-const newGameBtn = document.querySelector(".new-game")
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+const newGameBtn = document.querySelector(".new-game");
 
 //calling score/round elements
-const userScoreContainer = document.querySelector(".player-score-box")
-const computerScoreContainer = document.querySelector(".computer-score-box")
-const userScoreUi = document.querySelector(".player-score")
-const computerScoreUi = document.querySelector(".computer-score")
-const roundCounterContainer = document.querySelector(".round-marker")
-const roundCounter = document.querySelector(".current-round")
+const userScoreContainer = document.querySelector(".player-score-box");
+const computerScoreContainer = document.querySelector(".computer-score-box");
+const userScoreUi = document.querySelector(".player-score");
+const computerScoreUi = document.querySelector(".computer-score");
+const roundCounterContainer = document.querySelector(".round-marker");
+const roundCounter = document.querySelector(".current-round");
+
+//round history elements
+const roundHistory = document.querySelector(".round-history");
+const roundList = document.querySelector(".round-list")
+
+let roundArray = []
+console.log(roundArray)
+
+function ArrayToList() {
+    var result = "";
+    roundArray.forEach(function (item) {
+      result += "<li class='round'>" + "ROUND " + item.round + " " + item.result;
+    });
+    roundList.innerHTML=result;
+  }
+
+
+
+//Win/Lose Screen
+const scoreboard = document.querySelector(".scoreboard")
+const scoreboardEndType = document.createElement("p")
+const scoreboardEndContainer = document.createElement("div");
+const scoreboardEndRoundNumberType = document.createElement("p");
+const scoreboardEndDivider = document.createElement("div");
+const rscoreboardEndRoundResultType = document.createElement("p");
 
 //new game button
 newGameBtn.addEventListener("click", function(e){
@@ -46,7 +71,6 @@ scissorsBtn.addEventListener('click', function(e){
 let userScore = 0;
 let computerScore = 0;
 let roundTracker = 1;
-console.log("Round:"+roundTracker);
 
 //initial round tracker
 roundCounter.textContent = roundTracker;
@@ -116,7 +140,9 @@ function game(roundResult){
             userScore++;
             userScoreUi.textContent = userScore;
             userScoreContainer.appendChild(userScoreUi);
-            console.log("Round was won");
+            roundArray.unshift({round: roundTracker, result: ": PLAYER WIN"})
+            ArrayToList()
+            roundHistory.appendChild(roundList);
             break;
         }
         case "lose":{
@@ -126,14 +152,18 @@ function game(roundResult){
             computerScore++;
             computerScoreUi.textContent = computerScore;
             computerScoreContainer.appendChild(computerScoreUi);
-            console.log("Round was lost");
+            roundArray.unshift({round: roundTracker, result: ": COMPUTER WIN"})
+            ArrayToList()
+            roundHistory.appendChild(roundList);
             break;
         }
         default:{
             roundTracker++;
             roundCounter.textContent = roundTracker;
             roundCounterContainer.appendChild(roundCounter);
-            console.log("Round was tied");
+            roundArray.unshift({round: roundTracker, result: ": TIE"})
+            ArrayToList()
+            roundHistory.appendChild(roundList);
         }
     }
         if (userScore >= 5){
