@@ -1,5 +1,3 @@
-//user name input
-//let username = prompt("Enter your Name")
 
 //computer move function
 function computerPlay(){
