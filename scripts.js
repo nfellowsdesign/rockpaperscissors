@@ -1,4 +1,8 @@
 
+const rockBtn = document.querySelector("#rock")
+const paperBtn = document.querySelector("#paper")
+const scissorsBtn = document.querySelector("#scissors")
+
 //computer move function
 function computerPlay(){
     let roll = (Math.floor(Math.random()*3)+1)
@@ -18,20 +22,6 @@ function computerPlay(){
            //console.log("Computer Move:"+computerSelection);
         break;
         }
-    }
-}
-
-//user move function
-function userPlay(){
-    let userEntry = prompt("Enter your Move").toLowerCase();
-    if (userEntry === "rock"){
-        return userEntry;
-    }else if (userEntry === "paper"){
-        return userEntry;
-    }else if (userEntry === "scissors"){
-        return userEntry;
-    }else{
-        return "Not a valid move";
     }
 }
 
@@ -69,6 +59,30 @@ function playRound(userSelection, computerSelection) {
     }
 }
 
+rockBtn.addEventListener('click', function(e){
+    let userSelection = 'rock';
+    let computerSelection = computerPlay();
+    let roundResult = playRound(userSelection,computerSelection);
+    console.log(roundResult)
+});
+   
+paperBtn.addEventListener('click', function(e){
+    let userSelection = 'paper';
+    let computerSelection = computerPlay();
+    let roundResult = playRound(userSelection,computerSelection);
+    console.log(roundResult)
+});
+
+scissorsBtn.addEventListener('click', function(e){
+    let userSelection = 'scissors';
+    let computerSelection = computerPlay();
+    let roundResult = playRound(userSelection,computerSelection);
+    console.log(roundResult)
+});
+
+
+
+/*
 //full game function
 function game(){
     //initial states
@@ -80,15 +94,8 @@ function game(){
 
     //round loop
     do{
-        //user/computer moves
-        let computerSelection = computerPlay();
-        let userSelection = userPlay();
-        //log moves
-        console.log("User Move:"+userSelection);
-        console.log("Computer Move:"+computerSelection);
-        //log result of round
-        let roundResult = playRound(userSelection,computerSelection);
-        //add round result to game tracking
+        
+
         switch(roundResult) {
             case "win":{
                 userScore++;
@@ -123,3 +130,4 @@ function game(){
 }  
 
 game();
+*/
