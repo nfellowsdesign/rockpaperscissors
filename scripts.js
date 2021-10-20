@@ -1,13 +1,21 @@
-//initial states
-let userScore = 0;
-let computerScore = 0;
-let roundTracker = 1;
-console.log("Round:"+roundTracker);
-
-//calling ui elements
+//calling button elements
 const rockBtn = document.querySelector("#rock")
 const paperBtn = document.querySelector("#paper")
 const scissorsBtn = document.querySelector("#scissors")
+const newGameBtn = document.querySelector(".new-game")
+
+//calling score/round elements
+const userScoreContainer = document.querySelector(".player-score-box")
+const computerScoreContainer = document.querySelector(".computer-score-box")
+const userScoreUi = document.querySelector(".player-score")
+const computerScoreUi = document.querySelector(".computer-score")
+const roundCounterContainer = document.querySelector(".round-marker")
+const roundCounter = document.querySelector(".current-round")
+
+//new game button
+newGameBtn.addEventListener("click", function(e){
+    location.reload();
+})
 
 //Play Button Events
 rockBtn.addEventListener('click', function(e){
@@ -33,6 +41,17 @@ scissorsBtn.addEventListener('click', function(e){
     console.log(roundResult);
     game(roundResult);
 });
+
+//initial states
+let userScore = 0;
+let computerScore = 0;
+let roundTracker = 1;
+console.log("Round:"+roundTracker);
+
+//initial round tracker
+roundCounter.textContent = roundTracker;
+roundCounterContainer.appendChild(roundCounter);
+
 
 //computer move function
 function computerPlay(){
@@ -92,34 +111,35 @@ function game(roundResult){
     switch(roundResult) {
         case "win":{
             roundTracker++;
-            console.log("Round:"+roundTracker);
+            roundCounter.textContent = roundTracker;
+            roundCounterContainer.appendChild(roundCounter);
             userScore++;
-            console.log(userScore);
-            console.log(computerScore);
+            userScoreUi.textContent = userScore;
+            userScoreContainer.appendChild(userScoreUi);
             console.log("Round was won");
             break;
         }
         case "lose":{
             roundTracker++;
-            console.log("Round:"+roundTracker);
+            roundCounter.textContent = roundTracker;
+            roundCounterContainer.appendChild(roundCounter);
             computerScore++;
-            console.log(userScore);
-            console.log(computerScore);
+            computerScoreUi.textContent = computerScore;
+            computerScoreContainer.appendChild(computerScoreUi);
             console.log("Round was lost");
             break;
         }
         default:{
             roundTracker++;
-            console.log("Round:"+roundTracker);
-            console.log(userScore);
-            console.log(computerScore);
+            roundCounter.textContent = roundTracker;
+            roundCounterContainer.appendChild(roundCounter);
             console.log("Round was tied");
         }
     }
-        if (userScore == 5){
+        if (userScore >= 5){
             console.log("Game over: Player Wins");
         } 
-        if (computerScore == 5){
+        if (computerScore >= 5){
             console.log("Game over: Player Loses");
         }
     }

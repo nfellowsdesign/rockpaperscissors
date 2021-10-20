@@ -19,17 +19,17 @@ body{
     height: 80px;
 }
 
-.logo{
-    color: var(--accent-color);
-    height: 120px;
-}
-
 .logo-container {
     flex:2;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 90px;
+}
+
+.logo{
+    color: var(--accent-color);
+    height: 120px;
 }
 
 .container{
