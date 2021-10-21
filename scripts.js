@@ -1,4 +1,5 @@
 //calling button elements
+const movesContainer = document.querySelector(".moves-container");
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
@@ -30,7 +31,7 @@ const section3 = document.querySelector('.section3');
 //new game button
 newGameBtn.addEventListener("click", function(e){
     location.reload();
-})
+});
 
 //Play Button Events
 rockBtn.addEventListener('click', function(e){
@@ -167,27 +168,21 @@ function game(roundResult){
         }
     }
         if (userScore >= 5){
-            console.log("Game over: Player Wins");
-            scoreboardContainer.removeChild(scoreboard);
+            //scoreboardContainer.removeChild(scoreboard);
             document.documentElement.style.setProperty('--accent-color', '#49e361');
             endType.textContent = "VICTORY";
             winScreen.classList.add("win-screen");
             winScreen.appendChild(endType);
             scoreboardContainer.appendChild(winScreen);
+            section2.replaceChild(winScreen, movesContainer);
         } 
         if (computerScore >= 5){
-            console.log("Game over: Player Loses");
-            scoreboardContainer.removeChild(scoreboard);
+            //scoreboardContainer.removeChild(scoreboard);
             document.documentElement.style.setProperty('--accent-color', '#e53f3f');
             endType.textContent = "DEFEAT";
             loseScreen.classList.add("lose-screen");
             loseScreen.appendChild(endType);
             scoreboardContainer.appendChild(loseScreen);
-
-            rockBtn.removeAttribute("id");
-            paperBtn.removeAttribute("id");
-            scissorsBtn.removeAttribute("id");
-
-
+            section2.replaceChild(loseScreen, movesContainer);
         }
     }
