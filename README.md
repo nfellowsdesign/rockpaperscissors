@@ -1,18 +1,14 @@
-This is a Rock Paper Scissors game made with HTML, CSS, and JS.
+TITLE: 
+    Rock Paper Scissors
 
-PLAN:
+DESCRIPTION: 
+    This is a simple first to five Rock Paper Scissors game made with HTML, CSS, and JS. The web app sets up a RPS game against the computer, and keeps track of rounds, score, and when either the player or computer wins display the win or lose screen respectively. This app was built primarily using Display: flex. 
 
-UNDERSTANDING THE GOAL:
-Create a Rock Paper Scissors game where the user plays against the computer, displays the results of the game, and keeps track of either the previous rounds and the total score.
-
-
-ASPECTS OF THE PROGRAM:
--ask the user for their name
-
--computers move (random each round)
--users inputs
--results of the round
-
--scoreboard
-    or
--log of the previous games
+GOALS:
+    - Excecute building the web app successfully using vanilla HTML,CSS, and JS.
+    - Learn how to code simple logic using JS
+    - Translate from design to code
+    - Create interseting 
+    
+CREDITS:
+   All Design and Development: Nathan Fellows 
