@@ -19,17 +19,14 @@ body{
     height: 80px;
 }
 
-.logo-container {
-    flex:2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 90px;
-}
-
 .logo{
     fill: var(--accent-color);
-    height: 120px;
+    flex:2;
+    justify-content: left;
+    margin-bottom: -8px;
+    margin-left: 55px;
+    margin-right: 35px;
+    font-size: 32px;
 }
 
 .container{

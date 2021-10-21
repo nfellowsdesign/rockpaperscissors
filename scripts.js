@@ -173,7 +173,6 @@ function game(roundResult){
             endType.textContent = "VICTORY";
             winScreen.classList.add("win-screen");
             winScreen.appendChild(endType);
-
             scoreboardContainer.appendChild(winScreen);
         } 
         if (computerScore >= 5){
@@ -183,7 +182,12 @@ function game(roundResult){
             endType.textContent = "DEFEAT";
             loseScreen.classList.add("lose-screen");
             loseScreen.appendChild(endType);
-
             scoreboardContainer.appendChild(loseScreen);
+
+            rockBtn.removeAttribute("id");
+            paperBtn.removeAttribute("id");
+            scissorsBtn.removeAttribute("id");
+
+
         }
     }
