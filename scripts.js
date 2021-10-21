@@ -14,28 +14,18 @@ const roundCounter = document.querySelector(".current-round");
 
 //round history elements
 const roundHistory = document.querySelector(".round-history");
-const roundList = document.querySelector(".round-list")
-
-let roundArray = []
-console.log(roundArray)
-
-function ArrayToList() {
-    var result = "";
-    roundArray.forEach(function (item) {
-      result += "<li class='round'>" + "ROUND " + item.round + " " + item.result;
-    });
-    roundList.innerHTML=result;
-  }
-
-
+const roundList = document.querySelector(".round-list");
 
 //Win/Lose Screen
-const scoreboard = document.querySelector(".scoreboard")
-const scoreboardEndType = document.createElement("p")
-const scoreboardEndContainer = document.createElement("div");
-const scoreboardEndRoundNumberType = document.createElement("p");
-const scoreboardEndDivider = document.createElement("div");
-const rscoreboardEndRoundResultType = document.createElement("p");
+const scoreboardContainer = document.querySelector(".section1");
+const scoreboard = document.querySelector(".scoreboard");
+const winScreen = document.createElement("div");
+const loseScreen = document.createElement('div');
+const body = document.querySelector('body');
+const endType = document.createElement('p');
+const moveReplace = document.createElement('div');
+const section2 = document.querySelector('.section2');
+const section3 = document.querySelector('.section3');
 
 //new game button
 newGameBtn.addEventListener("click", function(e){
@@ -129,7 +119,17 @@ function playRound(userSelection, computerSelection) {
             return "tie";
     }
 }
+//round history array
+let roundArray = []
+console.log(roundArray)
 
+function ArrayToList() {
+    var result = "";
+    roundArray.forEach(function (item) {
+      result += "<li class='round'>" + "ROUND " + item.round + " " + item.result;
+    });
+    roundList.innerHTML=result;
+  }
 //game function
 function game(roundResult){
     switch(roundResult) {
@@ -168,8 +168,22 @@ function game(roundResult){
     }
         if (userScore >= 5){
             console.log("Game over: Player Wins");
+            scoreboardContainer.removeChild(scoreboard);
+            document.documentElement.style.setProperty('--accent-color', '#49e361');
+            endType.textContent = "VICTORY";
+            winScreen.classList.add("win-screen");
+            winScreen.appendChild(endType);
+
+            scoreboardContainer.appendChild(winScreen);
         } 
         if (computerScore >= 5){
             console.log("Game over: Player Loses");
+            scoreboardContainer.removeChild(scoreboard);
+            document.documentElement.style.setProperty('--accent-color', '#e53f3f');
+            endType.textContent = "DEFEAT";
+            loseScreen.classList.add("lose-screen");
+            loseScreen.appendChild(endType);
+
+            scoreboardContainer.appendChild(loseScreen);
         }
     }

@@ -28,7 +28,7 @@ body{
 }
 
 .logo{
-    color: var(--accent-color);
+    fill: var(--accent-color);
     height: 120px;
 }
 
@@ -60,7 +60,6 @@ button.new-game{
 button.play-button{
     flex: 1;
     aspect-ratio: 1.5/1;
-    justify-content: space-between;
 }
 
 button:hover{
@@ -84,6 +83,22 @@ button:hover{
     flex: 1;
     height: 264px;
     margin-left: 16px;
+}
+
+.win-screen, .lose-screen{
+        background-color: var(--main-color);
+        border-radius: 8px;
+        display: flex;
+        flex: 1;
+        height: 264px;
+        margin-left: 16px;
+}
+
+.win-screen p , .lose-screen p{
+    font-size: 100px;
+    margin: auto;
+    
+
 }
 
 .player-score-box, .computer-score-box{
@@ -158,21 +173,25 @@ button:hover{
     gap: 16px;
 }
 
+.container.section3{
+    gap: 16px;
+}
 .round-history{
     /*background-color: var(--test-color);*/
-    flex:2;
-    margin-left: 16px;
+    flex: 2;
+
 }
-.spacer{
-    flex:1;
+.spacer-history{
+    flex:1;    
 }
 
 .round-list{
     list-style: none;
     margin: 0px;
+    margin-right: -6px;
     padding: 0px;
-    
 }
+
 .round{
     font-size: 16px;
     background-color: var(--main-color);
